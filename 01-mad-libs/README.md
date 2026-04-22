@@ -1,0 +1,75 @@
+# Project 1 — Mad Libs
+
+Mad Libs is a word game: you fill in blanks without knowing the story, and the result is usually silly. We're going to write a program that does this for us.
+
+## What you'll learn
+
+- **`print()`** — how to make your program show text on the screen.
+- **`input()`** — how to ask the user a question and remember the answer.
+- **Variables** — names we give to pieces of data so we can use them later.
+- **Strings** — text in Python (anything inside quotes `" "`).
+- **f-strings** — a way to mix variables into text.
+- **Comments** — notes in your code that Python ignores. They start with `#`.
+
+## How the program works
+
+Every program you'll ever write does three things, in some order: **gets input → processes it → produces output**. Mad Libs is the simplest possible example:
+
+1. Ask the user for a few words.
+2. Glue those words into a pre-written story.
+3. Print the finished story.
+
+That's it. No loops, no decisions, no math. Just in → out.
+
+## Read the solution
+
+Open [`solution.py`](solution.py) in any text editor. Read it top to bottom. A few things to notice:
+
+### Lines starting with `#` are comments
+
+```python
+# This is a comment. Python ignores it.
+```
+
+Comments are for humans. Use them to explain *why* something is happening, not *what* — the code already shows what.
+
+### `input()` waits for the user to type
+
+```python
+name = input("Your name: ")
+```
+
+Three things are happening on this one line:
+
+1. `input("Your name: ")` prints the text inside the parentheses and waits for the user to press Enter.
+2. Whatever they typed is handed back.
+3. The `=` sign **stores** that value in a variable called `name`.
+
+Now any time we write `name` elsewhere in the program, Python replaces it with what the user typed.
+
+### f-strings put variables inside text
+
+```python
+print(f"Hello, {name}!")
+```
+
+The `f` right before the quote turns this into a **formatted string**. Anything inside `{ }` is treated as a Python variable and swapped in. Without the `f`, Python would print the literal text `Hello, {name}!` — braces and all.
+
+## Run it
+
+From your terminal, inside this folder:
+
+```
+python3 solution.py
+```
+
+Try entering silly answers and reading your story out loud. That's the whole joy of Mad Libs.
+
+## Try these extensions
+
+Stuck on what to do next? Try these, in order from easiest to hardest:
+
+1. **Add another blank.** Ask for a number, a color, or a food, and work it into the story.
+2. **Write a completely new story.** Change the sentences in the `print(...)` lines. The words you ask for should match your new story.
+3. **Make a longer story.** Add 5 more sentences with more variables.
+4. **Two stories.** Ask the user at the start: "Would you like story A or story B?" — but wait, that needs an `if` statement. Come back to this after Project 2.
