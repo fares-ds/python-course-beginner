@@ -75,6 +75,34 @@ Takes a list of strings and glues them together with `" "` between each:
 
 We use this to build the display string from a list of letters-or-underscores.
 
+### How the word display evolves
+
+If the secret is `"piano"` and the user has guessed nothing yet, `display_word` produces:
+
+```
+_ _ _ _ _
+```
+
+After they guess `a`:
+
+```
+_ _ _ a _
+```
+
+After `p`:
+
+```
+p _ _ a _
+```
+
+After `i`, `n`, `o`:
+
+```
+p i a n o
+```
+
+...at which point `set(secret).issubset(guessed_letters)` is `True` and the player wins.
+
 ### Constants
 
 ```python
@@ -104,6 +132,79 @@ Make sure `words.txt` is in the same folder:
 
 ```
 python3 solution.py
+```
+
+## Example run
+
+Here's an abbreviated session where the secret word is `piano`. The word and number of wrong guesses remaining are shown each turn — the transcript below only shows a few turns to keep it readable.
+
+```
+$ python3 solution.py
+Welcome to Hangman!
+
+     +---+
+     |   |
+         |
+         |
+         |
+         |
+    =========
+Word:  _ _ _ _ _
+Wrong guesses left: 6
+
+Guess a letter: a
+Good guess — 'a' is in the word.
+
+     +---+
+     |   |
+         |
+         |
+         |
+         |
+    =========
+Word:  _ _ _ a _
+Wrong guesses left: 6
+
+Guess a letter: e
+Sorry, 'e' is not in the word.
+
+     +---+
+     |   |
+     O   |
+         |
+         |
+         |
+    =========
+Word:  _ _ _ a _
+Wrong guesses left: 5
+
+Guess a letter: 5
+Letters only, please.
+Guess a letter: ab
+Please type exactly one letter.
+Guess a letter: a
+You already guessed 'a'. Try another.
+Guess a letter: p
+
+... (a few good and bad guesses later) ...
+
+Word:  p i a n o
+Wrong guesses left: 3
+
+You got it! The word was 'piano'. Great job!
+```
+
+And if you run out of guesses, you see the full hangman and the reveal:
+
+```
+     +---+
+     |   |
+     O   |
+    /|\  |
+    / \  |
+         |
+    =========
+Out of guesses. The word was 'keyboard'. Better luck next time!
 ```
 
 ## Try these extensions

@@ -78,6 +78,14 @@ def decide_winner(user, computer):
 
 `user` and `computer` are placeholders. When you call `decide_winner("rock", "paper")`, Python sets `user = "rock"` and `computer = "paper"` inside the function, then runs the code.
 
+Some sample calls and what they return:
+
+```python
+decide_winner("rock", "scissors")     # -> "user"       (rock crushes scissors)
+decide_winner("rock", "paper")        # -> "computer"   (paper covers rock)
+decide_winner("paper", "paper")       # -> "tie"
+```
+
 ### `and` / `or`
 
 ```python
@@ -109,6 +117,44 @@ python3 solution.py
 ```
 
 Type `quit` when you're done playing.
+
+## Example run
+
+The computer picks randomly, so your run will differ — but you'll see the same pattern:
+
+```
+$ python3 solution.py
+Welcome to Rock Paper Scissors!
+Choose rock, paper, or scissors (or 'quit' to stop): rock
+Computer chose: scissors
+You win this round!
+Score — You: 1, Computer: 0
+
+Choose rock, paper, or scissors (or 'quit' to stop): Rock
+Computer chose: rock
+It's a tie!
+Score — You: 1, Computer: 0
+
+Choose rock, paper, or scissors (or 'quit' to stop): banana
+I didn't understand that. Try again.
+Choose rock, paper, or scissors (or 'quit' to stop): paper
+Computer chose: scissors
+Computer wins this round!
+Score — You: 1, Computer: 1
+
+Choose rock, paper, or scissors (or 'quit' to stop): quit
+
+Final score:
+  You:      1
+  Computer: 1
+Thanks for playing!
+```
+
+A few things to notice:
+
+- Typing `Rock` (capital R) still worked, because of `.lower()`.
+- Typing `banana` didn't crash — it just re-asked.
+- `quit` ends the game and prints the final score.
 
 ## Try these extensions
 

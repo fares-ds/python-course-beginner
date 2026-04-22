@@ -47,6 +47,14 @@ Three things are happening on this one line:
 
 Now any time we write `name` elsewhere in the program, Python replaces it with what the user typed.
 
+Concretely, if the user types `Alice` and presses Enter:
+
+```
+Your name: Alice      <- user typed "Alice"
+```
+
+...then `name` is now the string `"Alice"`.
+
 ### f-strings put variables inside text
 
 ```python
@@ -54,6 +62,14 @@ print(f"Hello, {name}!")
 ```
 
 The `f` right before the quote turns this into a **formatted string**. Anything inside `{ }` is treated as a Python variable and swapped in. Without the `f`, Python would print the literal text `Hello, {name}!` — braces and all.
+
+Side-by-side:
+
+```python
+name = "Alice"
+print(f"Hello, {name}!")    # prints:  Hello, Alice!
+print("Hello, {name}!")     # prints:  Hello, {name}!   (no f, no magic)
+```
 
 ## Run it
 
@@ -64,6 +80,27 @@ python3 solution.py
 ```
 
 Try entering silly answers and reading your story out loud. That's the whole joy of Mad Libs.
+
+## Example run
+
+Here's what a session looks like. The text at the end of each prompt line is what **you type** — the rest is what the program prints.
+
+```
+$ python3 solution.py
+Welcome to Mad Libs!
+Give me a few words and I'll make you a story.
+
+Your name: Alice
+An adjective (a describing word, like 'sparkly'): sparkly
+An animal: dragon
+A verb ending in -ing (like 'dancing'): singing
+A place: the moon
+
+--- Your story ---
+One morning, Alice woke up to find a sparkly dragon in the kitchen.
+The dragon was singing on the table and refused to leave.
+Eventually they both moved to the moon and lived happily ever after.
+```
 
 ## Try these extensions
 

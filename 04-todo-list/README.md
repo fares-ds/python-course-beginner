@@ -60,6 +60,14 @@ for number, task in enumerate(tasks, start=1):
 
 A `for` loop walks through something item by item. Plain `for task in tasks` gives you just each task. `enumerate(tasks, start=1)` also gives you a counter, so we can print "1. eggs", "2. milk", etc.
 
+With `tasks = ["eggs", "milk", "bread"]`, the loop above prints:
+
+```
+  1. eggs
+  2. milk
+  3. bread
+```
+
 ### The menu pattern
 
 ```python
@@ -92,6 +100,68 @@ python3 solution.py
 ```
 
 Try adding a few tasks, viewing them, removing one by number. Try removing from an empty list, or typing "banana" at the menu. A good program doesn't crash when the user makes mistakes.
+
+## Example run
+
+Here's a full session: adding two tasks, viewing them, removing one, then quitting. (The menu prints every turn; we've marked the repeats with `...` to keep the transcript short.)
+
+```
+$ python3 solution.py
+Welcome to your to-do list.
+
+What would you like to do?
+  1) Add a task
+  2) Remove a task
+  3) View all tasks
+  4) Quit
+Pick an option (1-4): 1
+What's the task? buy eggs
+Added: buy eggs
+
+... (menu shown again) ...
+Pick an option (1-4): 1
+What's the task? water the plants
+Added: water the plants
+
+... (menu shown again) ...
+Pick an option (1-4): 3
+Your tasks:
+  1. buy eggs
+  2. water the plants
+
+... (menu shown again) ...
+Pick an option (1-4): 2
+Your tasks:
+  1. buy eggs
+  2. water the plants
+Which number would you like to remove? 1
+Removed: buy eggs
+
+... (menu shown again) ...
+Pick an option (1-4): 4
+Bye!
+```
+
+And here's what each kind of mistake looks like:
+
+```
+Pick an option (1-4): 7
+Please pick 1, 2, 3, or 4.
+
+Pick an option (1-4): 2
+Your tasks:
+  1. water the plants
+Which number would you like to remove? banana
+That's not a number.
+
+Pick an option (1-4): 2
+Your tasks:
+  1. water the plants
+Which number would you like to remove? 99
+That number isn't on the list.
+```
+
+None of these crash the program — they just print a message and go back to the menu.
 
 ## Try these extensions
 

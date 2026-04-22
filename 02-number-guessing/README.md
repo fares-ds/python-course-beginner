@@ -62,7 +62,12 @@ Python checks these in order:
 
 `input()` always gives you text, even if the user typed `42`. To do math or comparisons, you need a number. `int("42")` turns the text `"42"` into the number `42`.
 
-But `int("banana")` **crashes the program**. We don't want that. `try` / `except` lets us say "try this; if something goes wrong, do this other thing instead":
+```python
+int("42")       # -> 42          (a number; you can add it, compare it, etc.)
+int("banana")   # -> CRASH: ValueError: invalid literal for int()
+```
+
+We don't want our program to crash. `try` / `except` lets us say "try this; if something goes wrong, do this other thing instead":
 
 ```python
 try:
@@ -81,6 +86,33 @@ python3 solution.py
 ```
 
 Try typing `banana` to see the error handling work. Try guessing on purpose-badly to see the hint system.
+
+## Example run
+
+The secret number changes every game (that's the whole point of `random`), so your run won't match this exactly — but the *shape* will look like:
+
+```
+$ python3 solution.py
+I'm thinking of a number between 1 and 100.
+Can you guess it?
+Your guess: banana
+That's not a whole number. Try again.
+Your guess: 50
+Too low.
+Your guess: 75
+Too high.
+Your guess: 62
+Too low.
+Your guess: 68
+Too high.
+Your guess: 65
+Got it! The number was 65.
+You took 5 guesses.
+```
+
+Notice how `banana` didn't count as a guess — the `continue` sent us back up before `attempts` got incremented. A good game doesn't punish the user for a typo.
+
+A smart strategy is to **halve the range each time**: start at 50, then 25 or 75 depending on the hint, then 12 or 37 or 62 or 87, and so on. This is called **binary search** — you can always find the number in at most 7 guesses this way.
 
 ## Try these extensions
 
