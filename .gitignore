@@ -21,3 +21,9 @@ env/
 
 # OS junk
 Thumbs.db
+
+# Project 11 — secrets and PandasAI runtime artifacts
+.env
+exports/
+.pandasai/
+cache/

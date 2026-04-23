@@ -75,6 +75,17 @@ Do them in order. Each one builds on the last.
 | 9 | [Pomodoro Timer](09-pomodoro-timer/) | `time.sleep`, `datetime`, code that runs over wall-clock time |
 | 10 | [Weather Fetcher](10-weather-fetcher/) | `pip install`, `requests`, HTTP, APIs — talking to the internet |
 
+### Tier 3 — Beyond the Curriculum
+
+You've graduated. These projects bring in real-world tools (pandas, language models, web frameworks). They need a bit more setup than "just Python" — each project's README says what.
+
+| # | Project | What you'll learn |
+|---|---------|-------------------|
+| 11 | [Data Analyst Agent](11-data-analyst-agent/) | `pandas`, [PandasAI](https://docs.pandas-ai.com), and a local LLM via [Ollama](https://ollama.com) — ask a CSV questions in English |
+| 12 | [Hugging Face LLM Course Roadmap](12-huggingface-llm-roadmap/) | A 10-week structured plan for the [Hugging Face LLM Course](https://huggingface.co/learn/llm-course/) — Transformers, fine-tuning, LoRA, RAG, deployment |
+| 13 | [Hugging Face Agents Course Roadmap](13-huggingface-agents-roadmap/) | A 6–10 week plan for the [Hugging Face Agents Course](https://huggingface.co/learn/agents-course/) — agent loops, tools, smolagents, LlamaIndex, LangGraph, agentic RAG, GAIA |
+| 14 | [DSPy Roadmap](14-dspy-roadmap/) | A 4–6 week plan for [DSPy](https://dspy.ai/) — signatures, modules, optimizers (`MIPROv2`, `GEPA`), and "compile, don't write" prompts |
+
 ---
 
 ## How to use these projects

@@ -1,0 +1,22 @@
+[
+  {
+    "topic": "cooking",
+    "text": "Cooking pasta: salt water heavily, ~1 tbsp per litre. Don't add oil. Cook 1 min less than the package says. Finish in the sauce with a ladle of pasta water. The starch makes the sauce cling."
+  },
+  {
+    "topic": "travel",
+    "text": "Lisbon: stay in Alfama, the old quarter, for the views. Walk everywhere. Pastel de Belem has long queues; Manteigaria in Chiado is just as good without the queue."
+  },
+  {
+    "topic": "python",
+    "text": "Python virtual environments: always create one per project with python3 -m venv .venv. Activate with source .venv/bin/activate. Isolates dependencies; without one you'll eventually break some other tool on your system."
+  },
+  {
+    "topic": "cooking",
+    "text": "Carbonara: no cream, ever. Eggs, pecorino, guanciale, black pepper. The heat from the pasta cooks the egg. Toss vigorously off the heat or the egg scrambles."
+  },
+  {
+    "topic": "python",
+    "text": "Pip: pin major versions in requirements.txt like 'requests>=2.0,<3.0'. Exact pins are too brittle for transitive deps; unpinned upper bounds break on major releases."
+  }
+]

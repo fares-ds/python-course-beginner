@@ -1,0 +1,12 @@
+Python notes — virtual environments
+
+Always create one per project: `python3 -m venv .venv`. Activate with
+`source .venv/bin/activate` on macOS/Linux, `.venv\Scripts\activate` on
+Windows.
+
+Once activated, `which python3` should point inside the venv. If it points
+to /usr/bin/python3, the venv isn't active.
+
+`pip freeze > requirements.txt` captures the current state. `pip install
+-r requirements.txt` reinstalls it on another machine. Pin major versions
+(`>=4.40,<5.0`) — exact pins break too easily on transitive deps.

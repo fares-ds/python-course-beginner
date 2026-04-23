@@ -1,0 +1,7 @@
+[
+  {"input": "What's the capital of France?", "expected": "Paris"},
+  {"input": "What's 17 + 25?", "expected": "42"},
+  {"input": "Tell me Germany's capital and add 100 + 50.", "expected": "Berlin"},
+  {"input": "What's the capital of Australia?", "expected": "Canberra"},
+  {"input": "Add 13 and 7, then tell me Japan's capital.", "expected": "Tokyo"}
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Jane Smith",
+    "bio": "ML researcher at OpenAI. Stanford PhD in computer science (2019). Known for early work on instruction tuning.",
+    "keywords": ["openai", "stanford", "instruction tuning", "phd"]
+  },
+  {
+    "name": "Marcus Chen",
+    "bio": "Founder of a robotics startup in Boston. MIT grad. Previously at Boston Dynamics.",
+    "keywords": ["mit", "boston dynamics", "robotics", "founder"]
+  },
+  {
+    "name": "Aisha Patel",
+    "bio": "Climate-tech VC at Greenheart Capital. Stanford MBA. Sits on three boards.",
+    "keywords": ["stanford", "vc", "climate", "mba"]
+  },
+  {
+    "name": "Diego Rivera",
+    "bio": "Independent novelist. Won the 2023 PEN Hemingway Prize. Lives in Mexico City.",
+    "keywords": ["novelist", "pen hemingway", "mexico"]
+  },
+  {
+    "name": "Lena Hofmann",
+    "bio": "Quantum-computing researcher at ETH Zurich. Stanford undergrad in physics. Speaks five languages.",
+    "keywords": ["stanford", "eth zurich", "quantum", "physics"]
+  }
+]
