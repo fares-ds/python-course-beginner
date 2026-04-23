@@ -6,7 +6,7 @@ Mad Libs is a word game: you fill in blanks without knowing the story, and the r
 
 - **`print()`** — how to make your program show text on the screen.
 - **`input()`** — how to ask the user a question and remember the answer.
-- **Variables** — names we give to pieces of data so we can use them later.
+- **Variables** — names we give to pieces of data so we can use them later. Think of a variable as a **labeled box**: you write a name on the box (`name`), drop a value inside (`"Alice"`), and any time you say the box's name later, Python hands you what's inside.
 - **Strings** — text in Python (anything inside quotes `" "`).
 - **f-strings** — a way to mix variables into text.
 - **Comments** — notes in your code that Python ignores. They start with `#`.
@@ -101,6 +101,14 @@ One morning, Alice woke up to find a sparkly dragon in the kitchen.
 The dragon was singing on the table and refused to leave.
 Eventually they both moved to the moon and lived happily ever after.
 ```
+
+## Check yourself
+
+Before moving on, can you answer these out loud, in your own words?
+
+1. What's the difference between `"Hello, {name}"` and `f"Hello, {name}"`?
+2. In `name = input("Your name: ")`, which part does the user see, and which part is where the answer gets stored?
+3. If you swap the order of the `input()` lines — ask for the animal before the name — does the story still work? Why or why not?
 
 ## Try these extensions
 

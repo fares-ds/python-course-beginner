@@ -85,9 +85,16 @@ def load_words(filename):
     # we're done. .read() reads the whole file as one big string, and
     # .splitlines() breaks it into a list of lines (without the newline chars).
     with open(filename) as f:
-        words = f.read().splitlines()
-    # Filter out blank lines and normalize to lowercase.
-    words = [w.strip().lower() for w in words if w.strip() != ""]
+        lines = f.read().splitlines()
+
+    # Clean up each line: remove spaces around it, make it lowercase, and skip
+    # any blank lines. We build a new list called "words" by appending one item
+    # at a time — exactly the pattern you used in the To-Do List project.
+    words = []
+    for line in lines:
+        cleaned = line.strip().lower()
+        if cleaned != "":
+            words.append(cleaned)
     return words
 
 

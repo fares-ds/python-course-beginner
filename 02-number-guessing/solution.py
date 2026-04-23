@@ -27,7 +27,7 @@ while True:
         print("That's not a whole number. Try again.")
         continue  # "continue" jumps back to the top of the loop.
 
-    attempts = attempts + 1  # same as: attempts += 1
+    attempts = attempts + 1
 
     if guess < secret:
         print("Too low.")

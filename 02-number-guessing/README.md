@@ -79,6 +79,10 @@ except ValueError:
 
 `continue` jumps back to the top of the loop, skipping the rest of this iteration. So we just ask again.
 
+### A shortcut you'll see later
+
+The line `attempts = attempts + 1` is so common that Python has a shortcut for it: `attempts += 1`. They mean exactly the same thing. We'll use the long form for now — read it out loud as "attempts becomes attempts plus one" — and graduate to the short form once the idea feels obvious.
+
 ## Run it
 
 ```
@@ -113,6 +117,16 @@ You took 5 guesses.
 Notice how `banana` didn't count as a guess — the `continue` sent us back up before `attempts` got incremented. A good game doesn't punish the user for a typo.
 
 A smart strategy is to **halve the range each time**: start at 50, then 25 or 75 depending on the hint, then 12 or 37 or 62 or 87, and so on. This is called **binary search** — you can always find the number in at most 7 guesses this way.
+
+## Check yourself
+
+Before moving on, can you answer these out loud?
+
+1. What does `continue` do differently from `break`?
+2. Why do we need `int(answer)` at all — why can't we just compare `answer` directly to `secret`?
+3. If you delete the `try` / `except` block and then type `banana`, what error would you see? Which line would it blame?
+
+*(For #3 — actually try it. Delete the block, run the game, type `banana`. Read the error out loud. Then put the block back.)*
 
 ## Try these extensions
 

@@ -11,6 +11,13 @@ The rules you already know:
 
 The real lesson here isn't the game. It's **functions** — the most important idea in programming after variables and loops.
 
+This project comes in **two versions**, and you should look at them in order:
+
+1. [`solution_v1_messy.py`](solution_v1_messy.py) — the whole game in one big block. No functions. It works, but it's tangled.
+2. [`solution.py`](solution.py) — the same game, cleaned up using functions.
+
+We're doing it this way on purpose. Reading v1 first, then v2, is how you'll *feel* why functions exist. If we jumped straight to the tidy version, "use functions" would sound like a rule. After seeing v1, it'll feel like relief.
+
 ## What you'll learn
 
 - **Functions** — named, reusable blocks of code (`def name(...):`).
@@ -20,11 +27,27 @@ The real lesson here isn't the game. It's **functions** — the most important i
 - **Boolean logic** — `and`, `or` for combining conditions.
 - String methods — `.lower()` and `.strip()`.
 
+## Start here: play the messy version
+
+Run `solution_v1_messy.py` and play a few rounds. The game works. Now **read it**. Some things to notice:
+
+- The validation loop (asking until the user types a real choice) sits *inside* the main game loop. Loop-inside-a-loop — ugly.
+- There are three `elif` branches that all do the same thing: print "You win this round!" and add 1 to the score. Near-identical lines copy-pasted.
+- If you wanted to describe what the main loop does in one sentence, you'd struggle. Too much is happening in one place.
+
+The program is **not wrong**. It's just hard to read, hard to change, and hard to explain. Now imagine a bug appears — where would you even look?
+
 ## Why functions matter
 
-Without functions, the main body of the program would be a giant pile of `if`-statements and input prompts all tangled together. Hard to read, hard to change.
+Think of a function as a **recipe**. You write it down once — the ingredients (parameters) and the steps — and give it a name. Any time you want that dish again, you don't re-derive the recipe; you just call it by name.
 
-With functions, the main loop reads almost like English:
+In `solution.py`, the messy v1 is **refactored** — reorganized without changing what it does — into three small, named pieces:
+
+- `get_user_choice()` — asks the user, keeps asking until valid, returns their answer.
+- `get_computer_choice()` — picks rock/paper/scissors at random.
+- `decide_winner(user, computer)` — returns `"tie"`, `"user"`, or `"computer"`.
+
+The main loop then reads almost like English:
 
 ```python
 user = get_user_choice()
@@ -112,7 +135,10 @@ Chaining them (`answer.lower().strip()`) is a friendly way to accept messy input
 
 ## Run it
 
+Both versions play the same game. Run the messy one first, then the tidy one:
+
 ```
+python3 solution_v1_messy.py
 python3 solution.py
 ```
 
@@ -155,6 +181,15 @@ A few things to notice:
 - Typing `Rock` (capital R) still worked, because of `.lower()`.
 - Typing `banana` didn't crash — it just re-asked.
 - `quit` ends the game and prints the final score.
+
+## Check yourself
+
+Before moving on, can you answer these out loud?
+
+1. Compare `solution_v1_messy.py` to `solution.py`. Point to **one specific thing** that got clearer after the refactor — and one thing that's exactly the same.
+2. Why are `get_user_choice` and `get_computer_choice` separate functions, when they both just return one of `"rock"`, `"paper"`, `"scissors"`?
+3. In `decide_winner(user, computer)`, what would happen if you accidentally called it as `decide_winner(computer, user)` (arguments swapped)?
+4. What would happen if you removed the `return` statement from `get_computer_choice`? What would the function hand back?
 
 ## Try these extensions
 

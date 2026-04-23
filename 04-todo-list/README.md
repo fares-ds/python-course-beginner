@@ -91,7 +91,9 @@ def add_task(tasks):
     tasks.append(...)
 ```
 
-We pass the list to each function so they can work on it. When you `.append()` to the list inside a function, the change sticks — because the list itself is shared, not copied. (For experienced readers: Python lists are mutable and passed by reference.)
+We pass the list to each function so they can work on it. When you `.append()` to the list inside a function, the real list changes — the function sees the *actual* list, not a copy. So the function doesn't need to `return` anything; the change has already happened.
+
+You'll run into this trade-off often: sometimes it's exactly what you want (like here), and sometimes it's a surprise. Python does this for lists, dictionaries, and sets. Plain numbers and strings behave the opposite way — a function gets a copy and can't change the original. Don't worry about memorizing that now; just notice that `.append()` inside a function *sticks*.
 
 ## Run it
 
@@ -162,6 +164,14 @@ That number isn't on the list.
 ```
 
 None of these crash the program — they just print a message and go back to the menu.
+
+## Check yourself
+
+Before moving on, can you answer these out loud?
+
+1. If `tasks = ["a", "b", "c"]`, what does `tasks[1]` give you? What about `tasks.pop(0)`, and what does `tasks` look like right after?
+2. Why doesn't `add_task(tasks)` need a `return` statement? (Hint: think about *where* the change happens.)
+3. If the user types `3` to remove a task but the list has only 2 items, what happens — and why doesn't the program crash?
 
 ## Try these extensions
 

@@ -58,6 +58,8 @@ A **set** is like a list but:
 - No order. You can't say "the first item".
 - Very fast for "is X in here?" checks.
 
+Picture a **jar of marbles**. You can keep dropping marbles in, but dropping in another red marble when there's already a red one doesn't change anything. You can ask "is there a blue marble in here?" but you *can't* ask "which marble is third?" — the jar has no order.
+
 Perfect for tracking which letters have been guessed. A list would work too, but a set is the right tool here.
 
 ### `set(secret).issubset(guessed_letters)`
@@ -66,14 +68,15 @@ Reads as "is every letter in the secret word also in guessed_letters?" — i.e.,
 
 ### `" ".join(list)`
 
-Takes a list of strings and glues them together with `" "` between each:
+Takes a list of strings and glues them together, putting the string **before** `.join` between each item:
 
 ```python
-" ".join(["p", "_", "_", "h", "o", "n"])
-# -> "p _ _ h o n"
+" ".join(["p", "_", "_", "h", "o", "n"])   # -> "p _ _ h o n"
+"".join(["p", "_", "_", "h", "o", "n"])    # -> "p__hon"
+"-".join(["a", "b", "c"])                  # -> "a-b-c"
 ```
 
-We use this to build the display string from a list of letters-or-underscores.
+So the string you call `.join` on is the **separator** — the glue. An empty string `""` means no glue. We use `" "` (a single space) because it makes the word easier to read when some letters are still underscores.
 
 ### How the word display evolves
 
@@ -206,6 +209,14 @@ And if you run out of guesses, you see the full hangman and the reveal:
     =========
 Out of guesses. The word was 'keyboard'. Better luck next time!
 ```
+
+## Check yourself
+
+Before moving on, can you answer these out loud?
+
+1. Why is `guessed_letters` a set instead of a list? What would break if it were a list?
+2. In plain English, what does `set(secret).issubset(guessed_letters)` check?
+3. If you wanted the game to allow only 5 wrong guesses instead of 6, what one line would you change?
 
 ## Try these extensions
 
